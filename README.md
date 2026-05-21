@@ -73,7 +73,9 @@ async def main():
 | `proxy` | `ProxyConfig` | `None` | Proxy configuration |
 | `fingerprint` | `FingerprintConfig` | `auto` | Browser fingerprint settings |
 | `stealth` | `bool` | `True` | Enable stealth/anti-detection patches |
-| `timeout` | `int` | `30000` | Default navigation timeout (ms) |
+| `timeout` | `int` | `60000` | Default navigation timeout (ms) |
+
+> **Personal note:** I bumped the default `timeout` from 30000 to 60000 ms — 30s was too aggressive for slower sites I work with and caused a lot of spurious failures.
 
 ## Development
 
@@ -92,14 +94,4 @@ pytest tests/ -v
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
-## Acknowledgements
-
-- Original project: [CloakHQ/CloakBrowser](https://github.com/CloakHQ/CloakBrowser)
-- Built on [Playwright for Python](https://playwright.dev/python/)
-- Inspired by [playwright-stealth](https://github.com/AtuboDad/playwright_stealth)
+Contributions are welcome! Please open an issue or submit a pull request. See [CONTRIB
