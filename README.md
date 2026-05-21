@@ -78,13 +78,4 @@ async def main():
 
 > **Personal note:** I bumped the default `timeout` from 30000 to 60000 ms — 30s was too aggressive for slower sites I work with and caused a lot of spurious failures.
 
-> **Personal note:** Added `slow_mo` to the config table — I kept forgetting this option existed and had to dig through the Playwright docs every time I wanted to slow things down for debugging.
-
-## Development
-
-```bash
-git clone https://github.com/your-org/CloakBrowser.git
-cd CloakBrowser
-pip install -e ".[dev]"
-
-```
+> **Personal note:** Added `slow_mo=50` to my usual instantiation when debugging — makes it much easier to visually follow what the browser is doing without it being a blur. Not changing the default since 0 is fine for production use.
