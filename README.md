@@ -74,8 +74,11 @@ async def main():
 | `fingerprint` | `FingerprintConfig` | `auto` | Browser fingerprint settings |
 | `stealth` | `bool` | `True` | Enable stealth/anti-detection patches |
 | `timeout` | `int` | `60000` | Default navigation timeout (ms) |
+| `slow_mo` | `int` | `0` | Milliseconds to wait between actions (useful for debugging) |
 
 > **Personal note:** I bumped the default `timeout` from 30000 to 60000 ms — 30s was too aggressive for slower sites I work with and caused a lot of spurious failures.
+
+> **Personal note:** Added `slow_mo` to the config table — I kept forgetting this option existed and had to dig through the Playwright docs every time I wanted to slow things down for debugging.
 
 ## Development
 
@@ -83,15 +86,5 @@ async def main():
 git clone https://github.com/your-org/CloakBrowser.git
 cd CloakBrowser
 pip install -e ".[dev]"
-pre-commit install
+
 ```
-
-Run tests:
-
-```bash
-pytest tests/ -v
-```
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request. See [CONTRIB
