@@ -78,10 +78,9 @@ async def main():
 
 > **Personal note:** I bumped the default `timeout` from 30000 to 60000 ms — 30s was too aggressive for slower sites I work with and caused a lot of spurious failures.
 
-> **Personal note:** Added `slow_mo=50` to my usual instantiation when debugging — makes it much easier to follow what the browser is doing without it flying through steps too fast to see.
+> **Personal note:** Added `slow_mo=50` to my usual instantiation when debugging — makes it much easier to follow what the browser is doing without it blasting through interactions too fast to see.
 
 ## Tips & Gotchas
 
-- If you hit `TimeoutError` on a specific site, try setting `slow_mo=100` and `headless=False` to watch what's happening live.
-- Some sites fingerprint the viewport size — passing a randomized `viewport` via `FingerprintConfig` helps a lot.
-- On Linux CI (no display), make sure to install the system deps: `playwright install-deps chromium`.
+- If you're running this inside Docker, make sure to pass `--no-sandbox` via `browser_args` — Chromium will silently fail otherwise.
+- `stealth=True` is almost always what you want; I've only turned it off when debugging fingerprint issues directly.
