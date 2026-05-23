@@ -78,4 +78,4 @@ async def main():
 
 > **Personal note:** I bumped the default `timeout` from 30000 to 60000 ms — 30s was too aggressive for slower sites I work with and caused a lot of spurious failures.
 
-> **Personal note:** Added `slow_mo=50` to my usual instantiation when debugging a scraper — makes it much easier to visually follow what the browser is doing without it flying through steps too fast to catch.
+> **Personal note:** Added `slow_mo=50` to my usual invocations when debugging — makes it much easier to visually follow what the browser is doing without it being too sluggish.
