@@ -78,9 +78,4 @@ async def main():
 
 > **Personal note:** I bumped the default `timeout` from 30000 to 60000 ms — 30s was too aggressive for slower sites I work with and caused a lot of spurious failures.
 
-> **Personal note:** Added `slow_mo=50` to my usual instantiation when debugging — makes it much easier to follow what the browser is doing without it blasting through interactions too fast to see.
-
-## Tips & Gotchas
-
-- If you're running this inside Docker, make sure to pass `--no-sandbox` via `browser_args` — Chromium will silently fail otherwise.
-- `stealth=True` is almost always what you want; I've only turned it off when debugging fingerprint issues directly.
+> **Personal note:** Added `slow_mo=50` to my usual setup when debugging — makes it much easier to visually follow what the browser is doing without it being too sluggish. Setting it to 0 in production.
